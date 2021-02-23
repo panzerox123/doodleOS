@@ -1,4 +1,5 @@
 toolchain/
-out/
 iso/
+*.o
 *.iso
+*.bin
