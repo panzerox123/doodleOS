@@ -42,7 +42,6 @@ extern uint_16 VGA_HEIGHT;
 #define FG_WHITE 0x0F
 
 
-void init_term();
 void printc(const uint_8, const uint_8);
 void print(const uint_8 *, const uint_8);
 void cls(const uint_8);

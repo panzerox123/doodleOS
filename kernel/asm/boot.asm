@@ -4,7 +4,7 @@ section .text
 bits 32
 
 _start:
-    %include "kernel/paging.asm"
+    %include "kernel/asm/paging.asm"
     section .text
     ; Load GDT
     lgdt [gdt64.gdt_pointer]
@@ -14,13 +14,12 @@ _start:
     mov es, ax
     jmp gdt64.code:long_mode_start
 
-%include "kernel/gdt.asm"
+%include "kernel/asm/gdt.asm"
 
 bits 64
 
-extern _main
-
 long_mode_start:
+    extern _main
     call _main
     hlt
     jmp $
